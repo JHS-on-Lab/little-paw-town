@@ -99,6 +99,13 @@ namespace LittlePawTown.Core
         public MiniGameData       GetMiniGame(string id)      => _miniGameMap.GetValueOrDefault(id);
         public PushScenarioData   GetPushScenario(string id)  => _pushMap.GetValueOrDefault(id);
 
+        // ── Filtered Getters ──────────────────────────────────
+        /// <summary>특정 종·카테고리에 속하고 enabled 인 파츠 목록을 sortOrder 순으로 반환.</summary>
+        public List<PartData> GetPartsByCategory(string speciesId, PartCategory category) =>
+            parts.Where(p => p != null && p.enabled && p.speciesId == speciesId && p.partCategory == category)
+                 .OrderBy(p => p.sortOrder)
+                 .ToList();
+
         // ── List Getters ───────────────────────────────────────
         public IReadOnlyList<SpeciesData>        AllSpecies         => species;
         public IReadOnlyList<PartData>           AllParts           => parts;

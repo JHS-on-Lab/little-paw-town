@@ -16,8 +16,9 @@ namespace LittlePawTown.UI.Screens
     public class TitleScreen : BaseScreen
     {
         [Header("References")]
-        [SerializeField] private Button btnStart;
-        [SerializeField] private Button btnSettings;
+        [SerializeField] private Button           btnStart;
+        [SerializeField] private Button           btnSettings;
+        [SerializeField] private PetCreationScreen petCreationScreen;
 
         protected override void Awake()
         {
@@ -62,9 +63,9 @@ namespace LittlePawTown.UI.Screens
 
         private void GoToPetCreation()
         {
-            // PetCreation 은 같은 Title 씬 내 화면 스택으로 처리
-            // TODO: PHASE 2 구현 후 UIManager.Instance.Push(petCreationScreen) 로 교체
-            Debug.Log("[Title] Go to PetCreation.");
+            var ctx = new PetCreationContext();
+            petCreationScreen.SetContext(ctx);
+            UIManager.Instance.Push(petCreationScreen);
         }
 
         // ── 뒤로가기 ───────────────────────────────────────────
