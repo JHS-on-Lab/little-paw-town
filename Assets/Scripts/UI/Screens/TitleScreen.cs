@@ -63,6 +63,11 @@ namespace LittlePawTown.UI.Screens
 
         private void GoToPetCreation()
         {
+            if (petCreationScreen == null)
+            {
+                Debug.LogWarning("[Title] PetCreationScreen 미연결 — Inspector에서 연결 필요.");
+                return;
+            }
             var ctx = new PetCreationContext();
             petCreationScreen.SetContext(ctx);
             UIManager.Instance.Push(petCreationScreen);

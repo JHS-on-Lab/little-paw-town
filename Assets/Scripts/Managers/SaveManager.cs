@@ -12,8 +12,8 @@ namespace LittlePawTown.Core
     /// </summary>
     public class SaveManager : Singleton<SaveManager>
     {
-        private SaveData _data;
-        private SettingsSaveData _settings;
+        private SaveData _data = new();
+        private SettingsSaveData _settings = new();
 
         private string SavePath     => Path.Combine(Application.persistentDataPath, Constants.SaveFileName);
         private string SettingsPath => Path.Combine(Application.persistentDataPath, Constants.SettingsFileName);

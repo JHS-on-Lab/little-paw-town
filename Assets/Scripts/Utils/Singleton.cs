@@ -41,6 +41,8 @@ namespace LittlePawTown.Utils
             }
 
             _instance = this as T;
+            // DontDestroyOnLoad 은 루트 오브젝트에만 작동하므로 부모에서 분리
+            transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
             OnAwake();
         }
