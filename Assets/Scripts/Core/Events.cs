@@ -24,6 +24,8 @@ namespace LittlePawTown.Core
         public struct PetCreatedEvent
         {
             public string PetId;
+            public string PetName;
+            public string SpeciesId;
         }
 
         // ── 애정도 ─────────────────────────────────────────────
