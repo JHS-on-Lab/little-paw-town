@@ -9,9 +9,10 @@ namespace LittlePawTown.Utils
         // ── Scene Names ───────────────────────────────────────
         public static class Scenes
         {
-            public const string Boot     = "Boot";
-            public const string Title    = "Title";
-            public const string Game     = "Game";    // 홈·장소·이벤트 전부 이 씬 안에서 UI Stack 으로 처리
+            public const string Boot        = "Boot";
+            public const string Title       = "Title";
+            public const string PetCreation = "PetCreation";
+            public const string Game        = "Game";
         }
 
         // ── Species ───────────────────────────────────────────

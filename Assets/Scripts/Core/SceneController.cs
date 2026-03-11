@@ -7,7 +7,7 @@ namespace LittlePawTown.Core
 {
     /// <summary>
     /// 씬 전환 담당. DontDestroyOnLoad 싱글톤.
-    /// - Boot → Title → Game 씬 전환
+    /// - Boot → Title → PetCreation → Game 씬 전환
     /// - 게임 씬 내부 이동(홈, 장소 등)은 UI Stack 으로 처리하므로 씬 로드 불필요
     /// - 페이드 인/아웃 연출 포함
     /// </summary>
@@ -19,6 +19,11 @@ namespace LittlePawTown.Core
         public void GoToTitle()
         {
             LoadScene(Constants.Scenes.Title, GameState.Title);
+        }
+
+        public void GoToPetCreation()
+        {
+            LoadScene(Constants.Scenes.PetCreation, GameState.PetCreation);
         }
 
         public void GoToGame()

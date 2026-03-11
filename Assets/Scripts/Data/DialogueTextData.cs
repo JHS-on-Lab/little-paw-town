@@ -17,17 +17,17 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewDialogueText", menuName = "LittlePawTown/Master/DialogueText")]
     public class DialogueTextData : MasterDataBase
     {
-        [Header("분류")]
+        [Header("Classification")]
         public DialogueOwnerType ownerType;
-        [Tooltip("특정 종 전용이면 종 ID 입력. 비어 있으면 공통.")]
+        [Tooltip("Species ID if species-specific. Leave empty for common.")]
         public string speciesId;
         public string locale = "ko";
 
-        [Header("텍스트")]
+        [Header("Text")]
         public string titleText;
         [TextArea(2, 6)]
         public string bodyText;
-        [Tooltip("표정/애니메이션 연동에 사용할 감정 태그.")]
+        [Tooltip("Emotion tag for facial expression/animation linkage.")]
         public string emotionTag;
     }
 }

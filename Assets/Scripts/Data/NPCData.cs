@@ -16,19 +16,19 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewNPC", menuName = "LittlePawTown/Master/NPC")]
     public class NPCData : MasterDataBase
     {
-        [Header("기본 정보")]
+        [Header("Basic Info")]
         public string  nameKo;
         public NpcType npcType;
         public bool    enabledMvp = true;
 
-        [Header("기본 장소")]
-        [Tooltip("이 NPC 가 주로 머무는 장소 ID.")]
+        [Header("Default Location")]
+        [Tooltip("Location ID where this NPC mainly resides.")]
         public string defaultLocationId;
 
-        [Header("성격 태그")]
+        [Header("Personality Tags")]
         public List<string> personalityTags = new();
 
-        [Header("리소스")]
+        [Header("Resources")]
         public Sprite portrait;
     }
 }

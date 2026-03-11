@@ -16,19 +16,19 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewPushScenario", menuName = "LittlePawTown/Master/PushScenario")]
     public class PushScenarioData : MasterDataBase
     {
-        [Header("알림 텍스트 키")]
+        [Header("Notification Text Keys")]
         public string titleTextKey;
         public string bodyTextKey;
 
-        [Header("트리거")]
+        [Header("Trigger")]
         public PushTriggerType triggerType;
-        [Tooltip("중복 방지 쿨다운 (시간).")]
+        [Tooltip("Cooldown in hours to prevent duplicates.")]
         public int cooldownHours;
 
-        [Header("연계")]
-        [Tooltip("알림 진입 시 연결되는 이벤트 그룹 ID.")]
+        [Header("Linkage")]
+        [Tooltip("Event group ID linked when notification is opened.")]
         public string relatedEventGroup;
-        [Tooltip("알림 열람 시 지급되는 추가 애정도.")]
+        [Tooltip("Bonus affection points granted when notification is opened.")]
         public int affectionBonusOnOpen;
     }
 }

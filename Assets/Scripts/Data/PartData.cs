@@ -18,20 +18,20 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewPart", menuName = "LittlePawTown/Master/Part")]
     public class PartData : MasterDataBase
     {
-        [Header("분류")]
+        [Header("Classification")]
         public string      speciesId;
         public PartCategory partCategory;
 
-        [Header("표시")]
+        [Header("Display")]
         public string nameKo;
         public Sprite  sprite;
 
-        [Header("렌더링")]
-        [Tooltip("낮을수록 뒤에 그려짐.")]
+        [Header("Rendering")]
+        [Tooltip("Lower value is drawn behind.")]
         public int  sortOrder;
         public bool colorable;
 
-        [Header("해금")]
+        [Header("Unlock")]
         public bool defaultUnlock = true;
     }
 }

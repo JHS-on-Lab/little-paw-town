@@ -9,16 +9,16 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewMiniGame", menuName = "LittlePawTown/Master/MiniGame")]
     public class MiniGameData : MasterDataBase
     {
-        [Header("기본 정보")]
+        [Header("Basic Info")]
         public string nameKo;
 
-        [Header("보상")]
+        [Header("Rewards")]
         public int rewardMoneyBase;
-        [Tooltip("미니게임 완료 시 지급되는 보조 애정도 포인트.")]
+        [Tooltip("Bonus affection points granted on mini-game completion.")]
         public int affectionSupportPoint;
 
-        [Header("제한")]
-        [Tooltip("재도전 쿨다운 (분). 0이면 제한 없음.")]
+        [Header("Limits")]
+        [Tooltip("Retry cooldown in minutes. 0 means no limit.")]
         public int cooldownMin;
     }
 }

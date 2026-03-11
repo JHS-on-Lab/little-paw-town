@@ -18,25 +18,25 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewLocation", menuName = "LittlePawTown/Master/Location")]
     public class LocationData : MasterDataBase
     {
-        [Header("표시")]
+        [Header("Display")]
         public string           nameKo;
         public LocationCategory category;
         public bool             enabledMvp = true;
         public int              displayOrder;
 
-        [Header("분위기 조건")]
-        [Tooltip("이 장소가 강조되는 날씨 태그 목록. 비어 있으면 모든 날씨 허용.")]
+        [Header("Atmosphere Conditions")]
+        [Tooltip("Weather tags that highlight this location. Leave empty to allow all weather.")]
         public List<string> weatherTags  = new();
-        [Tooltip("이 장소가 강조되는 시간대 태그 목록. 비어 있으면 모든 시간 허용.")]
+        [Tooltip("Time tags that highlight this location. Leave empty to allow all times.")]
         public List<string> timeTags     = new();
 
-        [Header("리소스 키")]
+        [Header("Resource Keys")]
         public string bgAssetKey;
         public string bgmKey;
         public string previewTextKey;
 
-        [Header("Ambient 연출 태그")]
-        [Tooltip("홈 진입 직후 짧은 생활 반응 연출에 사용되는 태그 목록.")]
+        [Header("Ambient Reaction Tags")]
+        [Tooltip("Tags used for short ambient reaction on home entry.")]
         public List<string> ambientReactionTags = new();
     }
 }

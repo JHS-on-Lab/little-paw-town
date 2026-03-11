@@ -8,17 +8,15 @@ namespace LittlePawTown.UI.Screens
     /// SCR-002 타이틀 화면.
     /// Hierarchy:
     ///   [TitleScreen] CanvasGroup + TitleScreen
-    ///     SafeArea (SafeAreaFitter)
-    ///       Logo          (Image)
-    ///       BtnStart      (Button)
-    ///       BtnSettings   (Button)
+    ///     Logo          (Image)
+    ///     BtnStart      (Button)
+    ///     BtnSettings   (Button)
     /// </summary>
     public class TitleScreen : BaseScreen
     {
         [Header("References")]
-        [SerializeField] private Button           btnStart;
-        [SerializeField] private Button           btnSettings;
-        [SerializeField] private PetCreationScreen petCreationScreen;
+        [SerializeField] private Button btnStart;
+        [SerializeField] private Button btnSettings;
 
         protected override void Awake()
         {
@@ -29,55 +27,24 @@ namespace LittlePawTown.UI.Screens
 
         protected override void OnShow()
         {
-            // 이미 반려동물이 있으면 게임 씬으로 바로 이동
-            var petData = SaveManager.Instance.PetData;
-            if (!string.IsNullOrEmpty(petData.petId))
+            // 이미 반려동물이 있으면 바로 게임으로
+            if (!string.IsNullOrEmpty(SaveManager.Instance.PetData.petId))
             {
                 SceneController.Instance.GoToGame();
-                return;
             }
         }
 
-        // ── 버튼 핸들러 ────────────────────────────────────────
         private void OnStartClicked()
         {
-            // 최초 실행 → 튜토리얼, 이후 → PetCreation 또는 Game
-            var player = SaveManager.Instance.PlayerData;
-            if (!player.tutorialCleared)
-            {
-                // TODO: 튜토리얼 화면으로 Push (PHASE 12)
-                // 임시: 바로 PetCreation 으로
-                GoToPetCreation();
-            }
-            else
-            {
-                SceneController.Instance.GoToGame();
-            }
+            SceneController.Instance.GoToPetCreation();
         }
 
         private void OnSettingsClicked()
         {
-            // TODO: 설정 화면 Push (PHASE 13)
+            // TODO: 설정 화면 (PHASE 13)
             Debug.Log("[Title] Settings clicked.");
         }
 
-        private void GoToPetCreation()
-        {
-            if (petCreationScreen == null)
-            {
-                Debug.LogWarning("[Title] PetCreationScreen 미연결 — Inspector에서 연결 필요.");
-                return;
-            }
-            var ctx = new PetCreationContext();
-            petCreationScreen.SetContext(ctx);
-            UIManager.Instance.Push(petCreationScreen);
-        }
-
-        // ── 뒤로가기 ───────────────────────────────────────────
-        public override bool OnBackPressed()
-        {
-            // 타이틀에서 뒤로가기 → 아무것도 안 함 (앱 종료 방지)
-            return true;
-        }
+        public override bool OnBackPressed() => true;
     }
 }

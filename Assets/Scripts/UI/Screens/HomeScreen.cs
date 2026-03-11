@@ -118,10 +118,10 @@ namespace LittlePawTown.UI.Screens
 
         private static string GetTimeTagDisplay() => GetCurrentTimeTag() switch
         {
-            Constants.TimeTags.Morning => "아침",
-            Constants.TimeTags.Noon    => "낮",
-            Constants.TimeTags.Evening => "저녁",
-            _                          => "밤",
+            Constants.TimeTags.Morning => "Morning",
+            Constants.TimeTags.Noon    => "Noon",
+            Constants.TimeTags.Evening => "Evening",
+            _                          => "Night",
         };
 
         // ── 탭 전환 ──────────────────────────────────────────────

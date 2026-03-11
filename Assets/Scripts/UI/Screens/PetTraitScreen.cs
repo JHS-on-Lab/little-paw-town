@@ -132,13 +132,13 @@ namespace LittlePawTown.UI.Screens
         // ── 버튼 ─────────────────────────────────────────────────
         private void OnBack()
         {
-            UIManager.Instance.Pop();
+            UIManager.Instance.Pop(instant: true);
         }
 
         private void OnConfirm()
         {
             completeScreen.SetContext(_ctx);
-            UIManager.Instance.Push(completeScreen);
+            UIManager.Instance.Push(completeScreen, instant: true);
         }
 
         public override bool OnBackPressed()

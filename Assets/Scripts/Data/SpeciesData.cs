@@ -9,16 +9,16 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewSpecies", menuName = "LittlePawTown/Master/Species")]
     public class SpeciesData : MasterDataBase
     {
-        [Header("표시")]
+        [Header("Display")]
         public string nameKo;
         public Sprite uiIcon;
 
-        [Header("리소스 키")]
+        [Header("Resource Keys")]
         public string bodyTypeKey;
         public string animationSetId;
         public string defaultVoiceSet;
 
-        [Header("정렬")]
+        [Header("Sort")]
         public int displayOrder;
     }
 }

@@ -28,24 +28,24 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewEventBranch", menuName = "LittlePawTown/Master/EventBranch")]
     public class EventBranchData : MasterDataBase
     {
-        [Header("소속 이벤트")]
+        [Header("Parent Event")]
         public string eventId;
 
-        [Header("조건")]
+        [Header("Condition")]
         public BranchConditionType conditionType;
-        [Tooltip("조건 키. 예: trait=curiosity, species=dog, npc=npc_baker_mina")]
+        [Tooltip("Condition key. e.g. trait=curiosity, species=dog, npc=npc_baker_mina")]
         public string conditionKey;
         public BranchOperator @operator;
-        [Tooltip("조건 비교값. 예: dog / 3 / 1")]
+        [Tooltip("Condition comparison value. e.g. dog / 3 / 1")]
         public string conditionValue;
 
-        [Header("연출")]
-        [Tooltip("DialogueTextData 의 text_key.")]
+        [Header("Presentation")]
+        [Tooltip("text_key of DialogueTextData.")]
         public string actionTextKey;
         public string animationKey;
 
-        [Header("우선순위")]
-        [Tooltip("높을수록 먼저 평가됨.")]
+        [Header("Priority")]
+        [Tooltip("Higher value is evaluated first.")]
         public int priority;
     }
 }

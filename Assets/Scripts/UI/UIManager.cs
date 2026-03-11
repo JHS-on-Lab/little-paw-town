@@ -56,7 +56,8 @@ namespace LittlePawTown.UI
             while (_screenStack.Count > 0)
             {
                 var s = _screenStack.Pop();
-                s.Hide(true);
+                // 씬 전환으로 이미 파괴된 오브젝트는 건너뜀
+                if (s != null) s.Hide(true);
             }
 
             _screenStack.Push(screen);

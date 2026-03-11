@@ -10,21 +10,21 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewEventReward", menuName = "LittlePawTown/Master/EventReward")]
     public class EventRewardData : MasterDataBase
     {
-        [Header("애정도 / 재화")]
+        [Header("Affection / Currency")]
         public int affectionPoint;
         public int moneyDelta;
 
-        [Header("아이템 보상")]
+        [Header("Item Rewards")]
         public List<string> itemRewardIds = new();
 
-        [Header("추억 카드")]
-        [Tooltip("비어 있으면 추억 카드 미생성.")]
+        [Header("Memory Card")]
+        [Tooltip("Leave empty for no memory card.")]
         public string memoryCardTemplateId;
 
-        [Header("해금 플래그")]
+        [Header("Unlock Flags")]
         public List<string> unlockFlags = new();
 
-        [Header("NPC 친밀도 변화")]
+        [Header("NPC Relationship Deltas")]
         public List<RelationshipDelta> relationshipDeltas = new();
 
         [System.Serializable]

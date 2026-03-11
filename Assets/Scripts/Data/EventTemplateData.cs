@@ -34,40 +34,40 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewEventTemplate", menuName = "LittlePawTown/Master/EventTemplate")]
     public class EventTemplateData : MasterDataBase
     {
-        [Header("기본 정보")]
-        public string         title;   // 내부 제목
+        [Header("Basic Info")]
+        public string         title;   // internal title
         public EventCategory  category;
         public bool           repeatable = true;
 
-        [Header("노출 방식")]
+        [Header("Presentation Type")]
         public PresentationType  presentationType = PresentationType.Scene;
         public EventEntryPoint   entryPoint       = EventEntryPoint.LocationDirect;
-        [Tooltip("홈 상태 패널 추천 CTA 텍스트 키.")]
+        [Tooltip("CTA text key for home status panel suggestion.")]
         public string            entryCTATextKey;
 
-        [Header("발생 조건 — 장소 / 종 / 날씨 / 시간")]
-        [Tooltip("비어 있으면 모든 장소에서 발생 가능.")]
+        [Header("Trigger Conditions — Location / Species / Weather / Time")]
+        [Tooltip("Leave empty to allow in all locations.")]
         public List<string> locationScope  = new();
-        [Tooltip("비어 있거나 'all' 이면 모든 종에서 발생.")]
+        [Tooltip("Leave empty or 'all' to allow for all species.")]
         public List<string> speciesScope   = new();
         public List<string> weatherScope   = new();
         public List<string> timeScope      = new();
 
-        [Header("발생 조건 — 애정도")]
+        [Header("Trigger Conditions — Affection")]
         public int affectionMinLevel = 0;
         public int affectionMaxLevel = 999;
 
-        [Header("가중치 / 쿨다운")]
-        [Tooltip("높을수록 더 자주 등장.")]
+        [Header("Weight / Cooldown")]
+        [Tooltip("Higher value means more frequent appearance.")]
         public int weight       = 1;
-        [Tooltip("시간 단위. 0 이면 제한 없음.")]
+        [Tooltip("In hours. 0 means no limit.")]
         public int cooldownHours = 0;
 
-        [Header("분기 / 결과")]
+        [Header("Branches / Rewards")]
         public List<EventBranchData> branches    = new();
         public EventRewardData       defaultReward;
 
-        [Header("그룹 키")]
+        [Header("Group Keys")]
         public string branchGroupId;
         public string memoryCardGroup;
         public string followupGroupId;

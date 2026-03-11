@@ -49,8 +49,8 @@ namespace LittlePawTown.UI.Screens
             ApplyPreview();
 
             // 텍스트 초기 숨김
-            greetingText.text  = $"안녕, {_ctx.PetName}!";
-            subText.text       = "함께해줘서 고마워요 :)";
+            greetingText.text  = $"Hello, {_ctx.PetName}!";
+            subText.text       = "Thank you for being with me :)";
             SetTextAlpha(greetingText, 0f);
             SetTextAlpha(subText,      0f);
 

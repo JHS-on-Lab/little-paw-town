@@ -11,18 +11,18 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewAffectionLevel", menuName = "LittlePawTown/Master/AffectionLevel")]
     public class AffectionLevelData : MasterDataBase
     {
-        [Header("단계 정보")]
+        [Header("Level Info")]
         public int    level;
         public string nameKo;
-        [Tooltip("이 단계에 진입하는 데 필요한 누적 포인트.")]
+        [Tooltip("Cumulative points required to reach this level.")]
         public int    requiredPoint;
 
-        [Header("해금 콘텐츠")]
-        [Tooltip("해금되는 홈 반응 태그 목록.")]
+        [Header("Unlocked Content")]
+        [Tooltip("List of home reaction tags unlocked.")]
         public List<string> unlockReactionTags     = new();
-        [Tooltip("해금되는 이벤트 그룹 ID 목록.")]
+        [Tooltip("List of event group IDs unlocked.")]
         public List<string> unlockEventGroups      = new();
-        [Tooltip("해금되는 홈 행동 태그 목록.")]
+        [Tooltip("List of home behavior tags unlocked.")]
         public List<string> unlockHomeBehaviorTags = new();
     }
 }

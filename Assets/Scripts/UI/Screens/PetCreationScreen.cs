@@ -242,12 +242,12 @@ namespace LittlePawTown.UI.Screens
             if (string.IsNullOrWhiteSpace(_ctx.PetName))
             {
                 // TODO: 이름 입력 안내 토스트 (PHASE 2 UI polish)
-                Debug.LogWarning("[PetCreation] 이름을 입력해주세요.");
+                Debug.LogWarning("[PetCreation] Please enter a name.");
                 return;
             }
 
             petTraitScreen.SetContext(_ctx);
-            UIManager.Instance.Push(petTraitScreen);
+            UIManager.Instance.Push(petTraitScreen, instant: true);
         }
 
         // ── 뒤로가기 ─────────────────────────────────────────────

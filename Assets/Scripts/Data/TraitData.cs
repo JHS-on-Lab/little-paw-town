@@ -11,11 +11,11 @@ namespace LittlePawTown.Data
     [CreateAssetMenu(fileName = "NewTrait", menuName = "LittlePawTown/Master/Trait")]
     public class TraitData : MasterDataBase
     {
-        [Header("표시")]
+        [Header("Display")]
         public string nameKo;
         public string description;
 
-        [Header("값 범위")]
+        [Header("Value Range")]
         public int minValue = 1;
         public int maxValue = 3;
     }
